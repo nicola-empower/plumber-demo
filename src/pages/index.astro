@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TrustBar from "../components/TrustBar.jsx";
 import StickyCTA from "../components/StickyCTA.jsx";
 import FAQ from "../components/FAQ.jsx";
+import FeatureSection from "../components/FeatureSection.jsx";
 
 const testimonials = [
 	{
@@ -197,6 +198,31 @@ const testimonials = [
 				</div>
 			</div>
 		</div>
+
+		<FeatureSection
+			client:visible
+			title="Sanctuary Bathrooms"
+			subtitle="Luxury Installations"
+			description="Transform your bathroom into a personal spa. From rainfall showers to underfloor heating, we manage the entire installation process with minimal disruption to your home."
+			features={[
+				{
+					title: "Design Service",
+					desc: "3D CAD planning to visualise your new suite.",
+				},
+				{
+					title: "Premium Fittings",
+					desc: "Partners with Grohe, Duravit, and Hansgrohe.",
+				},
+				{
+					title: "Wet Rooms",
+					desc: "Specialist waterproofing for level-access showers.",
+				},
+			]}
+			imageSrc="/hero.png"
+			quote="I never knew a bathroom could look this good. It's like having a hotel suite at home."
+			author="James, Chelsea"
+			align="left"
+		/>
 
 		<!-- Social Proof Section (Specific Testimonials) -->
 		<div class="py-24 bg-gray-50">
