@@ -5,6 +5,8 @@ import StickyCTA from "../components/StickyCTA.jsx";
 import FAQ from "../components/FAQ.jsx";
 import FeatureSection from "../components/FeatureSection.jsx";
 import ServiceAreaMap from "../components/ServiceAreaMap.jsx";
+import ProcessFlow from "../components/ProcessFlow.jsx";
+import SafetyGuarantee from "../components/SafetyGuarantee.jsx";
 
 const testimonials = [
 	{
@@ -251,8 +253,33 @@ const testimonials = [
 			</div>
 		</div>
 
+		<!-- Trust Magnet "We Care" Section -->
+		<div class="py-24 bg-stone-50">
+			<div class="mx-auto max-w-7xl px-6 lg:px-8">
+				<div class="mx-auto max-w-2xl text-center">
+					<h2 class="text-base font-semibold leading-7 text-accent">
+						Why Choose Us
+					</h2>
+					<p
+						class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+					>
+						Not Just Another Plumber
+					</p>
+					<p class="mt-6 text-lg leading-8 text-gray-600">
+						We know how stressful a broken boiler or burst pipe is.
+						It disrupts your entire life. That’s why we treat your
+						home like our own—clean boots, clear communication, and
+						a fix that lasts. No jargon, no mess, just your home
+						back to normal.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<ProcessFlow client:visible />
+
 		<!-- Social Proof Section (Specific Testimonials) -->
-		<div class="py-24 bg-gray-50">
+		<div class="py-24 bg-white">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-2xl text-center mb-16">
 					<h2 class="text-base font-semibold leading-7 text-accent">
