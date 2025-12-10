@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TrustBar from "../components/TrustBar.jsx";
+import StickyCTA from "../components/StickyCTA.jsx";
+import FAQ from "../components/FAQ.jsx";
+
+const testimonials = [
+	{
+		text: "Arrived within 45 minutes as promised. Fixed the burst pipe preventing major water damage. Clean, professional and transparent pricing.",
+		author: "Sarah J.",
+		location: "Kensington",
+		rating: 5,
+	},
+	{
+		text: "Boiler broke down on Christmas Eve. They came out same day, diagnosed the fault instantly and had the part in the van. Lifesavers.",
+		author: "Mike T.",
+		location: "Fulham",
+		rating: 5,
+	},
+];
+---
+
+<Layout title="Elite Plumbing Solutions - 24/7 Emergency Response">
+	<main class="relative isolate overflow-hidden bg-white pb-20 md:pb-0">
+		<!-- Sticky Mobile CTA -->
+		<StickyCTA client:load number="020 8123 4567" label="Emergency Call" />
+
+		<!-- Hero Section -->
+		<div class="relative w-full overflow-hidden min-h-[90vh] flex flex-col">
+			<img
+				src="/hero.png"
+				alt="Professional plumber fixing sink"
+				class="absolute inset-0 -z-10 h-full w-full object-cover object-center brightness-[0.35]"
+			/>
+
+			<div
+				class="mx-auto max-w-7xl px-6 lg:px-8 grow flex flex-col justify-center relative z-10 py-20"
+			>
+				<div class="grid lg:grid-cols-2 gap-12 items-center">
+					<!-- Left: Copy (Panic/Relief Focus) -->
+					<div class="animate-fade-in-up">
+						<div
+							class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/90 text-white text-sm font-bold mb-6 border border-red-500 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
+						>
+							<span class="relative flex h-3 w-3">
+								<span
+									class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"
+								></span>
+								<span
+									class="relative inline-flex rounded-full h-3 w-3 bg-white"
+								></span>
+							</span>
+							Wait Time: ~45 Mins
+						</div>
+
+						<h1
+							class="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6 drop-shadow-lg leading-tight"
+						>
+							Plumbing Emergency?<br />
+							<span class="text-accent">We'll Fix It Fast.</span>
+						</h1>
+						<p
+							class="mt-4 text-xl leading-8 text-gray-200 drop-shadow-md max-w-lg"
+						>
+							Don't stress. We are local, gas safe registered, and
+							available right now. No hidden call-out fees.
+						</p>
+
+						<div class="mt-8 flex flex-col sm:flex-row gap-4">
+							<a
+								href="tel:02081234567"
+								class="rounded-full bg-accent px-8 py-4 text-xl font-bold text-white shadow-lg hover:bg-accent/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-phone"
+									><path
+										d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+									></path></svg
+								>
+								020 8123 4567
+							</a>
+							<div
+								class="flex items-center gap-4 text-white/80 text-sm px-4"
+							>
+								<div class="flex items-center gap-1">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										><path
+											d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+										></path></svg
+									> Fully Insured
+								</div>
+								<div class="flex items-center gap-1">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										><circle cx="12" cy="12" r="10"
+										></circle><path d="m9 12 2 2 4-4"
+										></path></svg
+									> Guarantee
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right: Diagnostic Tool (Authority Bias) -->
+					<div class="hidden lg:block">
+						<div
+							class="bg-white p-8 rounded-2xl shadow-2xl max-w-md ml-auto"
+						>
+							<h3 class="text-2xl font-bold text-gray-900 mb-2">
+								Diagnose Your Issue
+							</h3>
+							<p class="text-gray-500 mb-6">
+								Tell us what's wrong for priority dispatch.
+							</p>
+
+							<form
+								class="space-y-4"
+								onsubmit="event.preventDefault(); window.location.href='tel:02081234567'"
+							>
+								<div>
+									<label
+										class="block text-sm font-medium text-gray-700 mb-1"
+										>Problem Type</label
+									>
+									<select
+										class="w-full rounded-lg border-gray-300 border bg-gray-50 px-4 py-3 focus:ring-accent focus:border-accent"
+									>
+										<option>Select an emergency...</option>
+										<option>No Hot Water / Heating</option>
+										<option>Burst Pipe / Major Leak</option>
+										<option>Blocked Toilet / Drain</option>
+										<option>Low Water Pressure</option>
+										<option>Gas Smell (Urgent)</option>
+									</select>
+								</div>
+								<div>
+									<label
+										class="block text-sm font-medium text-gray-700 mb-1"
+										>Postcode</label
+									>
+									<input
+										type="text"
+										placeholder="e.g. SW1..."
+										class="w-full rounded-lg border-gray-300 border bg-gray-50 px-4 py-3 focus:ring-accent focus:border-accent"
+									/>
+								</div>
+								<button
+									type="submit"
+									class="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-primary/90 transition-colors"
+								>
+									Check Availability Now
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Trust Bar Integration -->
+			<div class="relative z-20 bg-white">
+				<TrustBar client:visible />
+			</div>
+		</div>
+
+		<!-- Social Proof Section (Specific Testimonials) -->
+		<div class="py-24 bg-gray-50">
+			<div class="mx-auto max-w-7xl px-6 lg:px-8">
+				<div class="mx-auto max-w-2xl text-center mb-16">
+					<h2 class="text-base font-semibold leading-7 text-accent">
+						Trusted by Locals
+					</h2>
+					<p
+						class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+					>
+						Real reviews from your neighbours
+					</p>
+				</div>
+				<div class="grid md:grid-cols-2 gap-8">
+					{
+						testimonials.map((t) => (
+							<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-4">
+								<div class="flex text-yellow-400">
+									{[...Array(t.rating)].map(() => (
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="h-5 w-5 fill-current"
+											viewBox="0 0 20 20"
+										>
+											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+										</svg>
+									))}
+								</div>
+								<p class="text-lg text-gray-600 italic">
+									"{t.text}"
+								</p>
+								<div class="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100">
+									<div class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
+										{t.author.charAt(0)}
+									</div>
+									<div>
+										<div class="font-bold text-gray-900">
+											{t.author}
+										</div>
+										<div class="text-sm text-gray-500">
+											{t.location}
+										</div>
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<FAQ client:visible />
+	</main>
+</Layout>

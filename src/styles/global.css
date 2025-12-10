@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --color-primary: #0f172a;
+  /* Slate 900 */
+  --color-secondary: #64748b;
+  /* Slate 500 */
+  --color-accent: #b45309;
+  /* Copper/Amber 700 - The key plumbing accent */
+  --color-trust: #0369a1;
+  /* Sky 700 - Water/Trust */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-primary antialiased selection:bg-accent/20 selection:text-accent;
+  }
+}
