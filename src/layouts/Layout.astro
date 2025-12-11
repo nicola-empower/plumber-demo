@@ -1,7 +1,4 @@
 ---
-import "@fontsource/outfit/400.css";
-import "@fontsource/outfit/500.css";
-import "@fontsource/outfit/700.css";
 import "../styles/global.css";
 import Header from "../components/Header.jsx";
 import LocalSeoFooter from "../components/LocalSeoFooter.astro";
@@ -19,12 +16,12 @@ interface Props {
 
 const {
     title,
-    description = "Pioneering Trade Services",
-    service = "Emergency Plumbing",
-    city = "London",
-    areas = ["Kensington", "Chelsea", "Fulham", "Hammersmith", "Ealing"],
-    postcodes = ["SW1", "SW3", "SW6", "W6", "W5"],
-    phone = "020 8123 4567",
+    description = "Emergency Plumbing Services",
+    service = "Plumbing",
+    city = "Liverpool",
+    areas = ["Everton", "Anfield", "Walton", "West Derby", "Kensington"],
+    postcodes = ["L1", "L3", "L4", "L5", "L6"],
+    phone = "0151 900 1234",
 } = Astro.props;
 ---
 
@@ -37,9 +34,16 @@ const {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <!-- Montserrat + Work Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body
-        class="min-h-screen flex flex-col overflow-x-hidden selection:bg-accent selection:text-white"
+        class="min-h-screen flex flex-col overflow-x-hidden font-body selection:bg-accent selection:text-white"
     >
         <!-- Sticky Header (Desktop) -->
         <Header client:load title={title.split(" - ")[0]} phone={phone} />

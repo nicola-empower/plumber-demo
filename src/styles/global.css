@@ -1,23 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Outfit', sans-serif;
-  --color-primary: #0f172a;
-  /* Slate 900 */
-  --color-secondary: #64748b;
-  /* Slate 500 */
-  --color-accent: #b45309;
-  /* Copper/Amber 700 - The key plumbing accent */
-  --color-trust: #0369a1;
-  /* Sky 700 - Water/Trust */
+  --font-header: "Montserrat", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+
+  --color-accent: #0284c7;
+  /* sky-600 */
+  --color-accent-hover: #0369a1;
+  /* sky-700 */
+
+  --radius-button: 9999px;
+  /* rounded-full */
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
+@layer utilities {
+  .font-header {
+    font-family: var(--font-header);
   }
 
-  body {
-    @apply bg-white text-primary antialiased selection:bg-accent/20 selection:text-accent;
+  .font-body {
+    font-family: var(--font-body);
   }
+}
+
+/* Plumber Base Styles (Clean Corporate) */
+body {
+  background-color: #f8fafc;
+  /* slate-50 */
+  color: #334155;
+  /* slate-700 */
 }

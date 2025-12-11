@@ -1,337 +1,403 @@
 ---
-import Testimonials from "../components/Testimonials.jsx";
 import Layout from "../layouts/Layout.astro";
 import TrustBar from "../components/TrustBar.jsx";
-import StickyCTA from "../components/StickyCTA.jsx";
+import Testimonials from "../components/Testimonials.jsx";
 import FAQ from "../components/FAQ.jsx";
 import FeatureSection from "../components/FeatureSection.jsx";
-import ServiceAreaMap from "../components/ServiceAreaMap.jsx";
 import ProcessFlow from "../components/ProcessFlow.jsx";
-import SafetyGuarantee from "../components/SafetyGuarantee.jsx";
+import {
+	PenTool,
+	ShoppingBag,
+	Droplets,
+	ArrowRight,
+	CheckCircle,
+	Clock,
+	ShieldCheck,
+	Phone,
+} from "lucide-react";
 
-const testimonials = [
+const serviceFeatures = [
 	{
-		text: "Arrived within 45 minutes as promised. Fixed the burst pipe preventing major water damage. Clean, professional and transparent pricing.",
-		author: "Sarah J.",
-		location: "Kensington",
-		rating: 5,
+		title: "Design Service",
+		desc: "3D CAD planning to visualize your new suite before we lay a single tile. We ensure perfect spatial flow.",
+		icon: PenTool,
 	},
 	{
-		text: "Boiler broke down on Christmas Eve. They came out same day, diagnosed the fault instantly and had the part in the van. Lifesavers.",
-		author: "Mike T.",
-		location: "Fulham",
-		rating: 5,
+		title: "Premium Fittings",
+		desc: "We partner with Grohe, Duravit, and Hansgrohe to deliver hotel-quality finishes that stand the test of time.",
+		icon: ShoppingBag,
+	},
+	{
+		title: "Wet Rooms",
+		desc: "Specialist waterproofing for seamless, accessible level-access showers that scream luxury.",
+		icon: Droplets,
 	},
 ];
 ---
 
-<Layout title="Elite Plumbing Solutions - 24/7 Emergency Response">
-	<main class="relative isolate overflow-hidden bg-white pb-20 md:pb-0">
-		<!-- Sticky Mobile CTA -->
-		<StickyCTA client:load number="020 8123 4567" label="Emergency Call" />
-
+<Layout title="Elite Plumbing Solutions | Emergency & Luxury Bathrooms">
+	<main class="relative isolate overflow-hidden bg-white">
 		<!-- Hero Section -->
-		<div class="relative w-full overflow-hidden min-h-[90vh] flex flex-col">
+		<div class="relative h-[90vh] w-full overflow-hidden mb-12">
 			<img
 				src="/hero.png"
-				alt="Professional plumber fixing sink"
-				class="absolute inset-0 -z-10 h-full w-full object-cover object-center brightness-[0.35]"
+				alt="Luxury bathroom interior"
+				class="absolute inset-0 -z-10 h-full w-full object-cover object-center brightness-[0.7]"
 			/>
+			<div class="absolute inset-0 bg-blue-950/30 -z-10"></div>
 
 			<div
-				class="mx-auto max-w-7xl px-6 lg:px-8 grow flex flex-col justify-center relative z-10 py-20"
+				class="mx-auto max-w-7xl px-6 lg:px-8 h-full flex flex-col justify-center relative z-10"
 			>
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<!-- Left: Copy (Panic/Relief Focus) -->
-					<div class="animate-fade-in-up">
-						<div
-							class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/90 text-white text-sm font-bold mb-6 border border-red-500 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
-						>
-							<span class="relative flex h-3 w-3">
-								<span
-									class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"
-								></span>
-								<span
-									class="relative inline-flex rounded-full h-3 w-3 bg-white"
-								></span>
-							</span>
-							Wait Time: ~45 Mins
-						</div>
-
-						<h1
-							class="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6 drop-shadow-lg leading-tight"
-						>
-							Plumbing Emergency?<br />
-							<span class="text-accent">We'll Fix It Fast.</span>
-						</h1>
-						<p
-							class="mt-4 text-xl leading-8 text-gray-200 drop-shadow-md max-w-lg"
-						>
-							Don't stress. We are local, gas safe registered, and
-							available right now. No hidden call-out fees.
-						</p>
-
-						<div class="mt-8 flex flex-col sm:flex-row gap-4">
-							<a
-								href="tel:02081234567"
-								class="rounded-full bg-accent px-8 py-4 text-xl font-bold text-white shadow-lg hover:bg-accent/90 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									class="lucide lucide-phone"
-									><path
-										d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-									></path></svg
-								>
-								020 8123 4567
-							</a>
-							<div
-								class="flex items-center gap-4 text-white/80 text-sm px-4"
-							>
-								<div class="flex items-center gap-1">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="16"
-										height="16"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										><path
-											d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-										></path></svg
-									> Fully Insured
-								</div>
-								<div class="flex items-center gap-1">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="16"
-										height="16"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										><circle cx="12" cy="12" r="10"
-										></circle><path d="m9 12 2 2 4-4"
-										></path></svg
-									> Guarantee
-								</div>
-							</div>
-						</div>
+				<div class="max-w-3xl animate-fade-in-up">
+					<div
+						class="inline-flex items-center gap-2 rounded-full bg-red-600/90 backdrop-blur-sm px-4 py-1.5 text-sm font-bold text-white mb-8 shadow-lg animate-pulse"
+					>
+						<Clock size={16} /> 24/7 Priority Response Available
 					</div>
-
-					<!-- Right: Diagnostic Tool (Authority Bias) -->
+					<h1
+						class="text-5xl font-bold tracking-tight text-white sm:text-7xl mb-6 drop-shadow-xl font-serif"
+					>
+						Plumbing Emergency? <br />
+						<span class="text-blue-200">We'll Fix It Fast.</span>
+					</h1>
+					<p
+						class="mt-6 text-xl leading-8 text-blue-50 drop-shadow-md max-w-2xl font-light"
+					>
+						Don't stress. We are local, Gas Safe registered, and
+						available right now. No hidden call-out fees—just rapid
+						expert help when you need it most.
+					</p>
+					<div class="mt-10 flex flex-wrap items-center gap-6">
+						<a
+							href="tel:02081234567"
+							class="rounded-full bg-red-600 px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-red-500 transition-all duration-300 scale-100 hover:scale-105 flex items-center gap-2"
+						>
+							<Phone size={20} />
+							Call Priority Line
+						</a>
+						<a
+							href="/services"
+							class="rounded-full bg-white/10 backdrop-blur-md border border-white/30 px-8 py-4 text-lg font-semibold text-white hover:bg-white hover:text-blue-900 transition-all duration-300"
+						>
+							View Services
+						</a>
+					</div>
 				</div>
 			</div>
 
-			<!-- Trust Bar Integration -->
-			<div class="relative z-20 bg-white">
+			<!-- Floating Trust Bar -->
+			<div
+				class="absolute bottom-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-200 z-20"
+			>
 				<TrustBar client:visible />
 			</div>
 		</div>
 
-		<!-- Dedicated Diagnostic Section (New Placement) -->
-		<div class="bg-accent py-12">
-			<div
-				class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center"
-			>
-				<div
-					class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-2xl"
+		<!-- Triage Tool Section (Automation Hook) -->
+		<div class="py-16 sm:py-24 bg-blue-50">
+			<div class="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+				<h2
+					class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl mb-8 font-serif"
 				>
-					<h3
-						class="text-2xl font-bold text-gray-900 mb-2 text-center"
-					>
-						Diagnose Your Issue
-					</h3>
-					<p class="text-gray-500 mb-6 text-center">
-						Tell us what's wrong for priority dispatch.
+					Diagnose Your Issue Instantly
+				</h2>
+				<div
+					class="bg-white p-8 rounded-2xl shadow-xl border border-blue-100"
+				>
+					<p class="text-gray-600 mb-6">
+						Not sure if it’s an emergency? Select your problem to
+						check engineer availability.
 					</p>
-
-					<form
-						class="space-y-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0"
-						onsubmit="event.preventDefault(); window.location.href='tel:02081234567'"
+					<div
+						class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left"
 					>
-						<div class="col-span-2 md:col-span-1">
-							<label
-								class="block text-sm font-medium text-gray-700 mb-1"
-								>Problem Type</label
+						<button
+							class="p-4 border rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all flex items-center gap-3 group"
+						>
+							<div
+								class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
 							>
-							<select
-								class="w-full rounded-lg border-gray-300 border bg-gray-50 px-4 py-3 focus:ring-accent focus:border-accent"
+								<Droplets size={20} />
+							</div>
+							<span class="font-semibold text-gray-700"
+								>Burst Pipe / Leak</span
 							>
-								<option>Select an emergency...</option>
-								<option>No Hot Water / Heating</option>
-								<option>Burst Pipe / Major Leak</option>
-								<option>Blocked Toilet / Drain</option>
-								<option>Low Water Pressure</option>
-								<option>Gas Smell (Urgent)</option>
-							</select>
-						</div>
-						<div class="col-span-2 md:col-span-1">
-							<label
-								class="block text-sm font-medium text-gray-700 mb-1"
-								>Postcode</label
+						</button>
+						<button
+							class="p-4 border rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all flex items-center gap-3 group"
+						>
+							<div
+								class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
 							>
-							<input
-								type="text"
-								placeholder="e.g. SW1..."
-								class="w-full rounded-lg border-gray-300 border bg-gray-50 px-4 py-3 focus:ring-accent focus:border-accent"
-							/>
-						</div>
-						<div class="col-span-2">
-							<button
-								type="submit"
-								class="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-primary/90 transition-colors"
+								<ShieldCheck size={20} />
+							</div>
+							<span class="font-semibold text-gray-700"
+								>Gas Smell / Boiler</span
 							>
-								Check Availability Now
-							</button>
-						</div>
-					</form>
+						</button>
+						<button
+							class="p-4 border rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all flex items-center gap-3 group"
+						>
+							<div
+								class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+							>
+								<Clock size={20} />
+							</div>
+							<span class="font-semibold text-gray-700"
+								>No Hot Water</span
+							>
+						</button>
+						<button
+							class="p-4 border rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all flex items-center gap-3 group"
+						>
+							<div
+								class="bg-blue-100 p-2 rounded-lg text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+							>
+								<CheckCircle size={20} />
+							</div>
+							<span class="font-semibold text-gray-700"
+								>Annual Service</span
+							>
+						</button>
+					</div>
+					<div class="mt-8 pt-8 border-t border-gray-100">
+						<a
+							href="/contact"
+							class="text-blue-600 font-bold hover:text-blue-500"
+							>Check Availability in Your Postcode &rarr;</a
+						>
+					</div>
 				</div>
 			</div>
 		</div>
 
+		<!-- Sanctuary Section -->
 		<FeatureSection
 			client:visible
 			title="Sanctuary Bathrooms"
-			subtitle="Luxury Installations"
+			subtitle="Designed for Relaxation"
 			description="Transform your bathroom into a personal spa. From rainfall showers to underfloor heating, we manage the entire installation process with minimal disruption to your home."
-			features={[
-				{
-					title: "Design Service",
-					desc: "3D CAD planning to visualise your new suite.",
-				},
-				{
-					title: "Premium Fittings",
-					desc: "Partners with Grohe, Duravit, and Hansgrohe.",
-				},
-				{
-					title: "Wet Rooms",
-					desc: "Specialist waterproofing for level-access showers.",
-				},
-			]}
+			features={serviceFeatures}
 			imageSrc="/hero.png"
-			quote="I never knew a bathroom could look this good. It's like having a hotel suite at home."
-			author="James, Chelsea"
 			align="left"
+			quote={null}
+			author={null}
 		/>
 
-		<!-- Service Area Map Section -->
-		<div class="py-24 bg-white">
-			<div class="mx-auto max-w-7xl px-6 lg:px-8">
-				<div class="mx-auto max-w-2xl text-center mb-16">
-					<h2 class="text-base font-semibold leading-7 text-accent">
-						Local Coverage
-					</h2>
-					<p
-						class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-					>
-						Serving London & Surrey
-					</p>
-					<p class="mt-4 text-lg text-gray-500">
-						Rapid response across the capital. We are never more
-						than 45 minutes away.
-					</p>
-				</div>
-				<ServiceAreaMap
-					client:only="react"
-					center={[51.505, -0.09]}
-					city="London"
-					radiusMiles={15}
-				/>
-			</div>
-		</div>
-
-		<!-- Trust Magnet "We Care" Section -->
-		<div class="py-24 bg-stone-50">
+		<!-- Differentiation Section -->
+		<div class="bg-white py-24 sm:py-32">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-2xl text-center">
-					<h2 class="text-base font-semibold leading-7 text-accent">
-						Why Choose Us
-					</h2>
-					<p
-						class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+					<h2
+						class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-serif"
 					>
 						Not Just Another Plumber
-					</p>
+					</h2>
 					<p class="mt-6 text-lg leading-8 text-gray-600">
-						We know how stressful a broken boiler or burst pipe is.
-						It disrupts your entire life. That’s why we treat your
-						home like our own—clean boots, clear communication, and
-						a fix that lasts. No jargon, no mess, just your home
-						back to normal.
+						We know the stereotype: messy, late, and vague about
+						costs. We are the opposite. We treat your home like our
+						own.
 					</p>
+				</div>
+				<div
+					class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
+				>
+					<dl
+						class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+					>
+						<div
+							class="flex flex-col items-start bg-stone-50 p-8 rounded-2xl"
+						>
+							<div
+								class="rounded-lg bg-blue-600 p-2 ring-1 ring-blue-600/10 text-white mb-4"
+							>
+								<ShieldCheck
+									className="h-6 w-6"
+									aria-hidden="true"
+								/>
+							</div>
+							<dt
+								class="text-xl font-bold leading-7 text-gray-900"
+							>
+								Shoe Covers Worn
+							</dt>
+							<dd
+								class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600"
+							>
+								<p class="flex-auto">
+									Always. We respect your floors and carpets
+									from the moment we step through the door.
+								</p>
+							</dd>
+						</div>
+						<div
+							class="flex flex-col items-start bg-stone-50 p-8 rounded-2xl"
+						>
+							<div
+								class="rounded-lg bg-blue-600 p-2 ring-1 ring-blue-600/10 text-white mb-4"
+							>
+								<CheckCircle
+									className="h-6 w-6"
+									aria-hidden="true"
+								/>
+							</div>
+							<dt
+								class="text-xl font-bold leading-7 text-gray-900"
+							>
+								Floor Protection
+							</dt>
+							<dd
+								class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600"
+							>
+								<p class="flex-auto">
+									We use heavy-duty mats to create safe
+									walkways and protect your carpets during
+									work.
+								</p>
+							</dd>
+						</div>
+						<div
+							class="flex flex-col items-start bg-stone-50 p-8 rounded-2xl"
+						>
+							<div
+								class="rounded-lg bg-blue-600 p-2 ring-1 ring-blue-600/10 text-white mb-4"
+							>
+								<Clock className="h-6 w-6" aria-hidden="true" />
+							</div>
+							<dt
+								class="text-xl font-bold leading-7 text-gray-900"
+							>
+								Rubbish Removed
+							</dt>
+							<dd
+								class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600"
+							>
+								<p class="flex-auto">
+									We take the old boiler, bath, and tiles with
+									us. Your home is left spotless.
+								</p>
+							</dd>
+						</div>
+					</dl>
 				</div>
 			</div>
 		</div>
 
-		<ProcessFlow client:visible />
-
-		<!-- Social Proof Section (Specific Testimonials) -->
-		<div class="py-24 bg-white">
+		<!-- Recent Work Section -->
+		<div class="bg-blue-50 py-24 sm:py-32">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-2xl text-center mb-16">
-					<h2 class="text-base font-semibold leading-7 text-accent">
-						Trusted by Locals
-					</h2>
-					<p
-						class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+					<h2
+						class="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl font-serif"
 					>
-						Real reviews from your neighbours
+						Recent Work
+					</h2>
+					<p class="mt-4 text-lg text-gray-600">
+						Latest bathroom installations and repairs.
 					</p>
 				</div>
-				<div class="grid md:grid-cols-2 gap-8">
-					{
-						testimonials.map((t) => (
-							<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-4">
-								<div class="flex text-yellow-400">
-									{[...Array(t.rating)].map(() => (
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											class="h-5 w-5 fill-current"
-											viewBox="0 0 20 20"
-										>
-											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-										</svg>
-									))}
-								</div>
-								<p class="text-lg text-gray-600 italic">
-									"{t.text}"
-								</p>
-								<div class="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100">
-									<div class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
-										{t.author.charAt(0)}
-									</div>
-									<div>
-										<div class="font-bold text-gray-900">
-											{t.author}
-										</div>
-										<div class="text-sm text-gray-500">
-											{t.location}
-										</div>
-									</div>
-								</div>
-							</div>
-						))
-					}
+				<div class="mx-auto max-w-4xl">
+					<img
+						src="/plumber.png"
+						alt="Recent plumbing project"
+						class="w-full rounded-2xl shadow-xl ring-1 ring-blue-900/10 object-cover aspect-video"
+					/>
 				</div>
 			</div>
 		</div>
+
+		<Testimonials
+			client:visible
+			reviews={[
+				{
+					text: "Fixed the burst pipe preventing major water damage. Clean, professional, and transparent pricing. Saved our wood floors!",
+					author: "Sarah J.",
+					location: "Kensington",
+					role: "Emergency Repair",
+					rating: 5,
+				},
+				{
+					text: "It's like having a hotel suite at home. The tiling is perfect, and the team suggested a layout I hadn't even thought of.",
+					author: "James S.",
+					location: "Chelsea",
+					role: "Bathroom Renovation",
+					rating: 5,
+				},
+				{
+					text: "Arrived within 45 minutes as promised. The engineer wore shoe covers and was incredibly polite. Highly recommend.",
+					author: "Michael T.",
+					location: "Richmond",
+					role: "Leak Repair",
+					rating: 5,
+				},
+			]}
+		/>
+
+		<!-- Split CTA Section -->
+		<div class="bg-white py-16 sm:py-24" id="contact">
+			<div class="mx-auto max-w-7xl px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2
+						class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-serif"
+					>
+						How can we help you today?
+					</h2>
+				</div>
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+				>
+					<!-- Crisis Option -->
+					<div
+						class="bg-red-50 rounded-3xl p-8 border-2 border-red-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow"
+					>
+						<div
+							class="bg-red-100 p-4 rounded-full text-red-600 mb-6"
+						>
+							<Clock size={32} />
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-2">
+							Need Help Now?
+						</h3>
+						<p class="text-gray-600 mb-8 grow">
+							Call our 24/7 priority line for immediate dispatch
+							to your location.
+						</p>
+						<a
+							href="tel:02081234567"
+							class="w-full rounded-full bg-red-600 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-red-500 transition-all flex justify-center items-center gap-2"
+						>
+							Call Priority Line
+						</a>
+					</div>
+
+					<!-- Project Option -->
+					<div
+						class="bg-blue-50 rounded-3xl p-8 border-2 border-blue-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow"
+					>
+						<div
+							class="bg-blue-100 p-4 rounded-full text-blue-600 mb-6"
+						>
+							<PenTool size={32} />
+						</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-2">
+							Planning a Project?
+						</h3>
+						<p class="text-gray-600 mb-8 grow">
+							Book a free design consultation and site survey for
+							your new bathroom.
+						</p>
+						<a
+							href="/contact"
+							class="w-full rounded-full bg-blue-600 px-8 py-3.5 text-lg font-bold text-white shadow-lg hover:bg-blue-500 transition-all flex justify-center items-center gap-2"
+						>
+							Book Consultation
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<FAQ client:visible />
-	
-		<Testimonials client:visible />
 	</main>
 </Layout>
-
