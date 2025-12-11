@@ -42,7 +42,7 @@ const serviceFeatures = [
 			<img
 				src="/hero.png"
 				alt="Luxury bathroom interior"
-				class="absolute inset-0 -z-10 h-full w-full object-cover object-center brightness-[0.7]"
+				class="absolute inset-0 -z-10 h-full w-full object-cover object-bottom brightness-[0.7]"
 			/>
 			<div class="absolute inset-0 bg-blue-950/40 -z-10"></div>
 
@@ -88,9 +88,9 @@ const serviceFeatures = [
 
 			<!-- Floating Trust Bar -->
 			<div
-				class="absolute bottom-0 w-full bg-white/5 backdrop-blur-md border-t border-white/10 z-20"
+				class="absolute bottom-0 w-full bg-slate-900/30 backdrop-blur-md border-t border-white/10 z-20"
 			>
-				<TrustBar client:visible />
+				<TrustBar client:visible transparent={true} theme="dark" />
 			</div>
 		</div>
 

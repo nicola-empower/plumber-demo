@@ -7,9 +7,12 @@ const defaultItems = [
     { title: "12 Month", subtitle: "Warranty", icon: CheckCircle, colorClass: "text-green-600" }
 ];
 
-const TrustBar = ({ theme = 'light', items = defaultItems }) => {
+const TrustBar = ({ theme = 'light', items = defaultItems, transparent = false }) => {
     const isDark = theme === 'dark';
-    const baseClass = isDark ? "bg-gray-900 border-gray-800" : "bg-white border-gray-100";
+    let baseClass = isDark ? "bg-gray-900 border-gray-800" : "bg-white border-gray-100";
+    if (transparent) {
+        baseClass = "bg-transparent border-transparent";
+    }
     const textClass = isDark ? "text-gray-300" : "text-gray-600";
     const iconClass = isDark ? "text-gray-400" : "text-gray-400";
 
