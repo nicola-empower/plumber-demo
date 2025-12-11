@@ -1,4 +1,5 @@
 ---
+import Testimonials from "../components/Testimonials.jsx";
 import Layout from "../layouts/Layout.astro";
 import TrustBar from "../components/TrustBar.jsx";
 import StickyCTA from "../components/StickyCTA.jsx";
@@ -329,5 +330,8 @@ const testimonials = [
 			</div>
 		</div>
 		<FAQ client:visible />
+	
+		<Testimonials client:visible />
 	</main>
 </Layout>
+
