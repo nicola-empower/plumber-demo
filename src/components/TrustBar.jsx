@@ -1,3 +1,6 @@
+import React from 'react';
+import { Clock, ShieldCheck, CheckCircle } from 'lucide-react';
+
 const defaultItems = [
     { title: "<45 Mins", subtitle: "Avg. Response", icon: Clock, colorClass: "text-red-600" },
     { title: "Gas Safe", subtitle: "Reg. #123456", icon: ShieldCheck, colorClass: "text-yellow-500" },
