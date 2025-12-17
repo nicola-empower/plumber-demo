@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import JobCard from './JobCard';
 import JobForm from './JobForm';
-import { MOCK_JOBS, Job } from '@/lib/constants';
+import { MOCK_JOBS, Job } from '../../lib/constants';
 import { Plus, Search, Filter } from 'lucide-react';
 
 export default function JobManager() {
@@ -22,15 +22,15 @@ export default function JobManager() {
     };
 
     const handleStatusChange = (jobId: number, newStatus: Job['status']) => {
-        setJobs(jobs.map(job => 
+        setJobs(jobs.map(job =>
             job.id === jobId ? { ...job, status: newStatus } : job
         ));
     };
 
     const filteredJobs = jobs.filter(job => {
         const matchesFilter = filter === 'All' || job.status === filter;
-        const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                              job.client.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            job.client.toLowerCase().includes(searchTerm.toLowerCase());
         return matchesFilter && matchesSearch;
     });
 
@@ -40,32 +40,31 @@ export default function JobManager() {
             <div className="flex flex-col md:flex-row justify-between gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                 <div className="relative flex-1">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <input 
-                        type="text" 
-                        placeholder="Search jobs or clients..." 
+                    <input
+                        type="text"
+                        placeholder="Search jobs or clients..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0284C7] focus:border-transparent outline-none"
                     />
                 </div>
-                
+
                 <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
                     {['All', 'Scheduled', 'In Progress', 'Completed'].map((status) => (
                         <button
                             key={status}
                             onClick={() => setFilter(status as any)}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
-                                filter === status 
-                                    ? 'bg-gray-900 text-white' 
+                            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${filter === status
+                                    ? 'bg-gray-900 text-white'
                                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                            }`}
+                                }`}
                         >
                             {status}
                         </button>
                     ))}
                 </div>
 
-                <button 
+                <button
                     onClick={() => setShowForm(!showForm)}
                     className="flex items-center gap-2 bg-[#0284C7] text-white px-4 py-2 rounded-lg hover:bg-[#0369A1] transition-colors shadow-sm font-medium"
                 >
