@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import QuoteCalculator from "../../components/QuoteCalculator.jsx";
-import ServiceAreaMap from "../../components/ServiceAreaMap.jsx";
 ---
 
 <Layout title="Quote Command Dashboard">
@@ -10,7 +9,7 @@ import ServiceAreaMap from "../../components/ServiceAreaMap.jsx";
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
-                        <h1 class="text-2xl font-bold text-primary">
+                        <h1 class="text-2xl font-bold text-slate-900">
                             Quote Command
                         </h1>
                     </div>
@@ -46,13 +45,6 @@ import ServiceAreaMap from "../../components/ServiceAreaMap.jsx";
             </div>
 
             <QuoteCalculator client:load />
-
-            <div class="mt-8">
-                <h2 class="text-xl font-bold text-gray-800 mb-6">
-                    Service Area Configuration
-                </h2>
-                <ServiceAreaMap client:only="react" />
-            </div>
 
             <!-- Admin Suite Tools -->
             <h2 class="text-xl font-bold text-gray-800 mb-6 mt-12">
